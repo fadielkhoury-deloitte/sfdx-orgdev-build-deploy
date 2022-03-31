@@ -13286,22 +13286,27 @@ const execCommand = __webpack_require__(5505);
 
 var fnInstallSFDX = function(){
     core.info('=== Downloading and installing SFDX cli ===');
-    //execCommand.run('wget', ['https://developer.salesforce.com/media/salesforce-cli/sfdx-cli/channels/stable/sfdx-cli-v7.72.0-697e9faee2-linux-x64.tar.xz']);
-    core.info('=== Step 1 ===');
-    execCommand.run('wget', ['https://developer.salesforce.com/media/salesforce-cli/sfdx/channels/stable/sfdx-linux-arm.tar.xz']);
-    core.info('=== Step 2 ===');
-    execCommand.run('mkdir', ['-p', 'sfdx-cli']);
-    core.info('=== Step 3 ===');
-    //execCommand.run('tar', ['xJf', 'sfdx-cli-v7.72.0-697e9faee2-linux-x64.tar.xz', '-C', 'sfdx-cli', '--strip-components', '1']);
-    execCommand.run('tar', ['xJf', 'sfdx-linux-arm.tar.xz', '-C', 'sfdx-cli', '--strip-components', '1']);
-    core.info('=== Step 4 ===');
-    execCommand.run('cat', ['$PATH']);
-    core.info('=== Step 5 ===');
-    execCommand.run('ls', ['./sfdx-cli']);
-    core.info('=== Step 6 ===');
-    //export PATH=~/sfdx/bin:$PATH
-    execCommand.run('export', ['PATH=./sfdx-cli/bin:$PATH']);
-    // execCommand.run('./sfdx-cli/install', ['']);
+    execCommand.run('wget', ['-qO-', 'https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh']);
+    execCommand.run('command', ['-v', 'nvm']);
+    execCommand.run('nvm', ['use', '16']);
+    execCommand.run('npm', ['install', 'sfdx-cli', '--global']);
+    execCommand.run('sfdx', ['--version']);
+    // //execCommand.run('wget', ['https://developer.salesforce.com/media/salesforce-cli/sfdx-cli/channels/stable/sfdx-cli-v7.72.0-697e9faee2-linux-x64.tar.xz']);
+    // core.info('=== Step 1 ===');
+    // execCommand.run('wget', ['https://developer.salesforce.com/media/salesforce-cli/sfdx/channels/stable/sfdx-linux-arm.tar.xz']);
+    // core.info('=== Step 2 ===');
+    // execCommand.run('mkdir', ['-p', 'sfdx-cli']);
+    // core.info('=== Step 3 ===');
+    // //execCommand.run('tar', ['xJf', 'sfdx-cli-v7.72.0-697e9faee2-linux-x64.tar.xz', '-C', 'sfdx-cli', '--strip-components', '1']);
+    // execCommand.run('tar', ['xJf', 'sfdx-linux-arm.tar.xz', '-C', 'sfdx-cli', '--strip-components', '1']);
+    // core.info('=== Step 4 ===');
+    // execCommand.run('cat', ['$PATH']);
+    // core.info('=== Step 5 ===');
+    // execCommand.run('ls', ['./sfdx-cli']);
+    // core.info('=== Step 6 ===');
+    // //export PATH=~/sfdx/bin:$PATH
+    // execCommand.run('export', ['PATH=./sfdx-cli/bin:$PATH']);
+    // // execCommand.run('./sfdx-cli/install', ['']);
     core.info('=== SFDX cli installed ===');
 };
 
