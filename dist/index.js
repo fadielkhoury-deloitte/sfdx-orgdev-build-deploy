@@ -13295,6 +13295,10 @@ var fnInstallSFDX = function(){
     //execCommand.run('tar', ['xJf', 'sfdx-cli-v7.72.0-697e9faee2-linux-x64.tar.xz', '-C', 'sfdx-cli', '--strip-components', '1']);
     execCommand.run('tar', ['xJf', 'sfdx-linux-arm.tar.xz', '-C', 'sfdx-cli', '--strip-components', '1']);
     core.info('=== Step 4 ===');
+    execCommand.run('cat', ['$PATH']);
+    core.info('=== Step 5 ===');
+    execCommand.run('ls', ['./sfdx-cli']);
+    core.info('=== Step 6 ===');
     //export PATH=~/sfdx/bin:$PATH
     execCommand.run('export', ['PATH=./sfdx-cli/bin:$PATH']);
     // execCommand.run('./sfdx-cli/install', ['']);
