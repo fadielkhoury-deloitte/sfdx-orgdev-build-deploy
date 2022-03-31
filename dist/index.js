@@ -13287,11 +13287,11 @@ const execCommand = __webpack_require__(5505);
 var fnInstallSFDX = function(){
     core.info('=== Downloading and installing SFDX cli ===');
     core.info('=== Step 1 ===');
-    execCommand.run('wget', ['-qO-', 'https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh', '|', 'bash']);
+    execCommand.run('sudo', ['apt', 'update']);
     core.info('=== Step 2 ===');
-    execCommand.run('command', ['-v', 'nvm']);
+    execCommand.run('sudo', ['apt', 'install', 'nodejs', 'npm']);
     core.info('=== Step 3 ===');
-    execCommand.run('nvm', ['use', '16']);
+    // execCommand.run('nvm', ['use', '16']);
     core.info('=== Step 4 ===');
     execCommand.run('npm', ['install', 'sfdx-cli', '--global']);
     core.info('=== Step 5 ===');
