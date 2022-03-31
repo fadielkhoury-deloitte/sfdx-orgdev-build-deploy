@@ -13287,9 +13287,9 @@ const execCommand = __webpack_require__(5505);
 var fnInstallSFDX = function(){
     core.info('=== Downloading and installing SFDX cli ===');
     core.info('=== Step 1 ===');
-    execCommand.run('sudo', ['apt', 'update']);
+    execCommand.run('sudo', ['apt', '-q', 'update']);
     core.info('=== Step 2 ===');
-    execCommand.run('sudo', ['apt', 'install', 'nodejs', 'npm']);
+    execCommand.run('sudo', ['apt', '-q', 'install', 'nodejs', 'npm']);
     core.info('=== Step 3 ===');
     // execCommand.run('nvm', ['use', '16']);
     core.info('=== Step 4 ===');
