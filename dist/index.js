@@ -13286,10 +13286,15 @@ const execCommand = __webpack_require__(5505);
 
 var fnInstallSFDX = function(){
     core.info('=== Downloading and installing SFDX cli ===');
+    core.info('=== Step 1 ===');
     execCommand.run('wget', ['-qO-', 'https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh']);
+    core.info('=== Step 2 ===');
     execCommand.run('command', ['-v', 'nvm']);
+    core.info('=== Step 3 ===');
     execCommand.run('nvm', ['use', '16']);
+    core.info('=== Step 4 ===');
     execCommand.run('npm', ['install', 'sfdx-cli', '--global']);
+    core.info('=== Step 5 ===');
     execCommand.run('sfdx', ['--version']);
     // //execCommand.run('wget', ['https://developer.salesforce.com/media/salesforce-cli/sfdx-cli/channels/stable/sfdx-cli-v7.72.0-697e9faee2-linux-x64.tar.xz']);
     // core.info('=== Step 1 ===');
