@@ -13293,7 +13293,7 @@ var fnInstallSFDX = function(){
     core.info('=== Step 3 ===');
     // execCommand.run('nvm', ['use', '16']);
     core.info('=== Step 4 ===');
-    execCommand.run('npm', ['install', 'sfdx-cli', '--global']);
+    execCommand.run('npm', ['install', 'sfdx-cli', '--global', '--quiet']);
     core.info('=== Step 5 ===');
     execCommand.run('sfdx', ['--version']);
     // //execCommand.run('wget', ['https://developer.salesforce.com/media/salesforce-cli/sfdx-cli/channels/stable/sfdx-cli-v7.72.0-697e9faee2-linux-x64.tar.xz']);
